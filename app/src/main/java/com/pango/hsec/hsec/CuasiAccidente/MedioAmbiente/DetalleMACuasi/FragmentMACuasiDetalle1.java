@@ -1,7 +1,7 @@
 package com.pango.hsec.hsec.CuasiAccidente.MedioAmbiente.DetalleMACuasi;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,12 +12,8 @@ import com.pango.hsec.hsec.GlobalVariables;
 import com.pango.hsec.hsec.IActivity;
 import com.pango.hsec.hsec.R;
 import com.pango.hsec.hsec.adapter.Detalle1Adapter;
-import com.pango.hsec.hsec.adapter.MACuasiAccidenteAdapter;
 import com.pango.hsec.hsec.controller.ActivityController;
-import com.pango.hsec.hsec.model.InspeccionModel;
 import com.pango.hsec.hsec.model.MACuasiAccidenteModel;
-
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 
@@ -27,8 +23,8 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class FragmentMACuasiDetalle1 extends Fragment implements IActivity {
-    String[] obsDetcab={"CodCuasiAcci","CodAreaHSEC","CodTipo","PerReporta","Gerencia","SuperInt","ClasReal","ClasPotencial","ActRelacionada","GrupRiesgo","Fecha","Hora","CodUbicacion","CodSubUbicacion","UbicacionEsp","Lugar"};
-    String[] obsDetIzq={"Código","Área","Tipo","Persona que Reporta","Gerencia","Superintendencia","Clasificación Real","Clasificación Potencial","Activiad Relacionada","Grupo de Riesgo","Fecha","Hora","Ubicación","Sub Ubicación","Sub Ubicación Específica","Lugar"};
+    String[] obsDetcab={"CodCuasiAcci","CodAreaHSEC","CodTipo","ObservadoPor","Gerencia","Superint","ClasReal","ClasPotencial","ActRelacionada","GrupRiesgo","Fecha","Hora","CodUbicacion","CodSubUbicacion","UbicacionEsp","Lugar"};
+    String[] obsDetIzq={"Código","Área","Tipo","Persona que Reporta","Gerencia","Superintendencia","Clasificación Real","Clasificación Potencial","Actividad Relacionada","Grupo de Riesgo","Fecha","Hora","Ubicación","Sub Ubicación","Sub Ubicación Específica","Lugar"};
     Detalle1Adapter detalle1Adapter;
     String jsonCuasi="";
     String url;
@@ -96,16 +92,13 @@ public class FragmentMACuasiDetalle1 extends Fragment implements IActivity {
         ArrayList<String> obsDetcabf=new ArrayList<>();//
         ArrayList<String> obsDetIzqf=new ArrayList<>();//
 
-        for(int i=0;i<10;i++){
+        for(int i=0;i<16;i++){
             Boolean pass=true;
-            switch (i){
+           /* switch (i){
                 case 2:
                     if(StringUtils.isEmpty(getMACuasiModel.SuperInt))pass=false;
                     break;
-                /*case 3:
-                    if(StringUtils.isEmpty(getMACuasiModel.CodContrata))pass=false;
-                    break;*/
-            }
+            }*/
             if(pass){
                 obsDetcabf.add(obsDetcab[i]);
                 obsDetIzqf.add(obsDetIzq[i]);

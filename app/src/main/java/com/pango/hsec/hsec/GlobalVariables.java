@@ -1,16 +1,16 @@
 package com.pango.hsec.hsec;
 
 import android.os.Parcelable;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.util.Patterns;
 import android.view.View;
 
 import com.pango.hsec.hsec.model.CapCursoMinModel;
-import com.pango.hsec.hsec.model.CartillaModel;
 import com.pango.hsec.hsec.model.ControlCriticoModel;
 import com.pango.hsec.hsec.model.EquipoModel;
 import com.pango.hsec.hsec.model.EstadisticaDetModel;
 import com.pango.hsec.hsec.model.GaleriaModel;
+import com.pango.hsec.hsec.model.IncidenteModel;
 import com.pango.hsec.hsec.model.InspeccionModel;
 import com.pango.hsec.hsec.model.Maestro;
 import com.pango.hsec.hsec.model.ObsDetalleModel;
@@ -121,6 +121,13 @@ public class GlobalVariables  {
     private ArrayList<PersonaModel> ListPersonaOobs=new ArrayList<>();
 
     //public static InspeccionModel Inspeccion=new InspeccionModel();
+    //incidente
+//    public static InspeccionModel AddInspeccion=new InspeccionModel(); //cabecera
+
+//Incidente seguridad
+public static IncidenteModel AddIncidenteSeg=new IncidenteModel(); //cabecera
+
+
 
     public static boolean validarEmail(String email) {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
@@ -184,6 +191,7 @@ public class GlobalVariables  {
 
     public static ArrayList<ObsFacilitoMinModel> listaGlobalFacilito= new  ArrayList<>(); //data del fragment de Obs Facilito seguimiento
     public static ArrayList<PublicacionModel> listaGlobalMACuasiAccidente=new ArrayList<>();//data del fragment medio ambiente cuasiaccidente
+    public static ArrayList<PublicacionModel> listaGlobalSeguridadMA=new ArrayList<>();//data del fragment medio ambiente cuasiaccidente
 
     public static Parcelable stateMuro;
     public static Parcelable stateObs;
@@ -191,6 +199,7 @@ public class GlobalVariables  {
     public static Parcelable stateFac;
     public static Parcelable stateVer;
     public static Parcelable stateMAC;
+    public static Parcelable stateSEC;
 
     public static boolean passHome=false;
     public static boolean passObs=false;
@@ -198,6 +207,7 @@ public class GlobalVariables  {
     public static boolean passFac=false;
     public static boolean passVer=false;
     public static boolean passMAC=false;
+    public static boolean passSEC=false;
 
 
     public static View view_fragment;
@@ -286,6 +296,7 @@ public class GlobalVariables  {
 
     public static  ArrayList<Maestro> Gerencia = new ArrayList<>();
     public static  ArrayList<Maestro> SuperIntendencia = new ArrayList<>();
+
     public static  ArrayList<Maestro> Contrata = new ArrayList<>();
 
     public static  ArrayList<Maestro> NivelRiesgo_obs = new ArrayList<>();
@@ -298,25 +309,37 @@ public class GlobalVariables  {
     public static  ArrayList<Maestro> Tipo_insp = new ArrayList<>();
 
     //MACuasi
-    public static  ArrayList<Maestro> CodAreaHSEC = new ArrayList<>();
-    public static  ArrayList<Maestro> CodTipo = new ArrayList<>();
-    public static  ArrayList<Maestro> PerReporta = new ArrayList<>();
+    //public static  ArrayList<Maestro> CodAreaHSEC = new ArrayList<>();
+    public static  ArrayList<Maestro> Tipo_Inc = new ArrayList<>();
+    //public static  ArrayList<Maestro> PerReporta = new ArrayList<>();
     public static  ArrayList<Maestro> ClasPotencial = new ArrayList<>();
     public static  ArrayList<Maestro> ClasReal = new ArrayList<>();
-    public static  ArrayList<Maestro> ActRelacionada = new ArrayList<>();
+    //public static  ArrayList<Maestro> ActRelacionada = new ArrayList<>();
     public static  ArrayList<Maestro> GrupRiesgo = new ArrayList<>();
-    public static  ArrayList<Maestro> UbicacionEsp = new ArrayList<>();
-    public static  ArrayList<Maestro> CodSubUbicacion = new ArrayList<>();
-    public static  ArrayList<Maestro> Lugar = new ArrayList<>();
+    //public static  ArrayList<Maestro> UbicacionEsp = new ArrayList<>();
+    //public static  ArrayList<Maestro> CodSubUbicacion = new ArrayList<>();
+    //public static  ArrayList<Maestro> Lugar = new ArrayList<>();
     //MACuasiDetalle
     public static  ArrayList<Maestro> TituIncidente = new ArrayList<>();
-    public static  ArrayList<Maestro> TituDetallado = new ArrayList<>();
+    //public static  ArrayList<Maestro> TituDetallado = new ArrayList<>();
     public static  ArrayList<Maestro> Turno = new ArrayList<>();
     //public static  ArrayList<Maestro> Contrata = new ArrayList<>();
-    public static  ArrayList<Maestro> DesSuceso = new ArrayList<>();
-    public static  ArrayList<Maestro> AccioInmediatas = new ArrayList<>();
+    //public static  ArrayList<Maestro> DesSuceso = new ArrayList<>();
+    //public static  ArrayList<Maestro> AccioInmediatas = new ArrayList<>();
 
+    //SeguridaCuasi
+    public static  ArrayList<Maestro> Subtipo = new ArrayList<>();
+    //public static  ArrayList<Maestro> HHRelacionada = new ArrayList<>();
+    public static  ArrayList<Maestro> Riesgo = new ArrayList<>();
+    //Detalle Seguridad
+//    public static  ArrayList<Maestro> Conclusiones = new ArrayList<>();
+//    public static  ArrayList<Maestro> Aprendizaje = new ArrayList<>();
+//    public static  ArrayList<Maestro> ResumenIM = new ArrayList<>();
 
+    //CAUSALIDAD
+    public static  ArrayList<Maestro> TipoCausa = new ArrayList<>();
+    public static  ArrayList<Maestro> TipoCond = new ArrayList<>();
+    public static ArrayList<Maestro> Tcausalidad = new ArrayList<>();
 
 //plan de accion
     public static  ArrayList<Maestro> Referencia_Plan = new ArrayList<>();
@@ -325,7 +348,7 @@ public class GlobalVariables  {
 
     public static  ArrayList<Maestro> Tablas = new ArrayList<>();
 
-    //Obserbacion Detalle
+    //Observacion Detalle
     public static  ArrayList<Maestro> Actividad_obs = new ArrayList<>();
     public static  ArrayList<Maestro> HHA_obs = new ArrayList<>();
     public static  ArrayList<Maestro> Acto_obs = new ArrayList<>();
@@ -416,6 +439,15 @@ public class GlobalVariables  {
         Tipo_insp.add(Select);
         Tipo_Plan.add(Select);
         Tipo_Ver.add(Select);
+
+        Tipo_Inc.add(Select);
+        ClasPotencial.add(Select);
+        ClasReal.add(Select);
+        GrupRiesgo.add(Select);
+        TituIncidente.add(Select);
+        Turno.add(Select);
+        Subtipo.add(Select);
+
     }
     public static void loadObs_Detalles(){
 
@@ -677,6 +709,37 @@ public class GlobalVariables  {
         return Super;
     }
 
+    public static ArrayList<Maestro> loadRiesgo(String Tipo){
+        ArrayList<Maestro> RiesgoTemp = new ArrayList<>();
+        RiesgoTemp.add(new Maestro("","-  Seleccione  -"));
+        for (Maestro item:Riesgo ) {
+            String Tipos[]=item.CodTipo.split("\\.");
+            if(Tipos[0].equals(Tipo)&&item.CodTipo.contains("."))
+                RiesgoTemp.add(item);
+        }
+        return RiesgoTemp;
+    }
+
+    public static ArrayList<Maestro> loadCondicion(String Tipo){
+        ArrayList<Maestro> CondTemp = new ArrayList<>();
+        //CondTemp.add(new Maestro("","-  Seleccione  -"));
+        for (Maestro item:TipoCond ) {
+            //String Tipos[]=item.CodTipo.split("\\.");
+            if(item.CodTipo.equals(Tipo))
+                CondTemp.add(item);
+        }
+        return CondTemp;
+    }
+
+    public static ArrayList<Maestro> loadCausalidades(String Tipo) {
+        ArrayList<Maestro> TcausaTemp = new ArrayList<>();
+        for (Maestro item : Tcausalidad) {
+            String Tipos[]=item.CodTipo.split("-");
+            if (Tipos[1].replace('o','a').equals(Tipo))
+                TcausaTemp.add(item);
+        }
+        return TcausaTemp;
+    }
     //autenticacion
     public static String reemplazar(String cadena, String busqueda, String reemplazo) {
         return cadena.replaceAll(busqueda, reemplazo);
